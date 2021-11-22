@@ -21,7 +21,7 @@ public class BestLoanRates {
 
 		float bestRate = getRates(loanTermInYears);
 
-		if (bestRate > 0.0f) {
+		if (bestRate != 0.0f) {
 			System.out.println("Best Available Rate: " + bestRate + "%");
 		}
 		else {
