@@ -1,13 +1,25 @@
 package com.h2;
 import java.time.LocalDate;
+import java.time.YearMonth;
 
 public class SavingsCalculator {
     private float[] credits;
     private float[] debits;
 
+
+
+
     public  SavingsCalculator(float[] credits, float[] debits) {
         this.credits = credits;
         this.debits = debits;
+    }
+
+
+    public static void Main(String[] args) {
+    }
+
+    public float calculate(){
+        return this.sumOfCredits() - this.sumOfDebits();
     }
 
     private float sumOfCredits() {
@@ -28,8 +40,14 @@ public class SavingsCalculator {
     }
 
     private static int remainingDaysInMonth(LocalDate date) {
-        return -1;
+        YearMonth yearMonth = YearMonth.of(date.getYear(), date.getMonth());
+
+        int totalDaysInMonth = yearMonth.lengthOfMonth();
+
+        return totalDaysInMonth  - date.getDayOfMonth();
     }
+
+
 
 
 }
