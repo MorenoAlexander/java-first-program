@@ -22,7 +22,7 @@ public class Utilities {
     }
 
     private static void throwIllegalArgumentException(String in, String type) {
-        throw new IllegalArgumentException(in + "cannot be converted into a '" + type + "' value. Exiting program.");
+        throw new IllegalArgumentException(in + " cannot be converted into a '" + type + "' value. Exiting program.");
     }
 
     public static float getFloatValue(String in) {

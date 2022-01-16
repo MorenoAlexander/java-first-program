@@ -1,5 +1,7 @@
 package com.h2;
 
+import jdk.jshell.execution.Util;
+
 import java.text.DecimalFormat;
 
 public class MortgageCalculator {
@@ -9,9 +11,9 @@ public class MortgageCalculator {
     private double monthlyPayment;
 
     public static void main(String[] args) {
-        long loamAmount = Long.parseLong(args[0]);
-        int termInYears = Integer.parseInt(args[1]);
-        float annualRate = Float.parseFloat(args[2]);
+        long loamAmount = Utilities.getLongValue(args[0]);
+        int termInYears = Utilities.getIntValue(args[1]);
+        float annualRate = Utilities.getFloatValue(args[2]);
 
         MortgageCalculator calculator = new MortgageCalculator(loamAmount, termInYears, annualRate);
         calculator.calculateMonthlyPayment();
