@@ -8,6 +8,17 @@ public class MortgageCalculator {
     private float annualRate;
     private double monthlyPayment;
 
+    public static void main(String[] args) {
+        long loamAmount = Long.parseLong(args[0]);
+        int termInYears = Integer.parseInt(args[1]);
+        float annualRate = Float.parseFloat(args[2]);
+
+        MortgageCalculator calculator = new MortgageCalculator(loamAmount, termInYears, annualRate);
+        calculator.calculateMonthlyPayment();
+        System.out.println(calculator.toString());
+
+    }
+
     public MortgageCalculator(long loanAmount, int termInYears, float annualRate) {
         this.loanAmount = loanAmount;
         this.termInYears = termInYears;
@@ -32,7 +43,7 @@ public class MortgageCalculator {
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("####0.00");
-        return "hello";
+        return "monthlyPayment: " + df.format(this.monthlyPayment);
     }
 
 
