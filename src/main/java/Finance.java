@@ -11,8 +11,18 @@ public class Finance {
     public final static String MORTGAGE_CALCULATOR = "mortgageCalculator";
 
 
-    public static void Main(String args[]) {
+    public static void main(String args[]) {
+        String command = args[0];
+        if (!commandsToUsage.containsKey(command)) {
+            System.out.println(command + ": command not found");
+            return;
+        }
 
+        boolean isValidCommand = validateCommandArguments(args);
+        if (!isValidCommand) {
+            System.out.println(commandsToUsage.get(command));
+        }
+        executeCommand(command, args);
     }
 
     public final static Map<String, String> commandsToUsage = Map.of(
